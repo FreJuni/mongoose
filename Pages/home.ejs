@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="section-con">
+        <div class="con">
+            <div>
+                <h2>Simple WordPress Themes made for an Easy Start</h2>
+               <% if(!isLogin) { %>
+                <a href="/login">Login account</a>
+                <a href="register">Register account</a>
+                <% } %>
+            </div>
+            <% if(isLogin) {  %>
+            <a href="/admin/post-form">Go to post form</a>
+            <form action="/logout" method="post">
+                <button>Logout</button>
+            </form>
+            <% } %>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil commodi iure! Eveniet doloribus quas repudiandae rem nam corrupti maxime, assumenda, cumque culpa aliquam ipsa dolorum architecto vitae perferendis dignissimos!
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h2>Posts</h2>
+            <% for(let post of postArr) { %>
+                <div class="post-con">
+                    <div>
+                    <h3><%= post.title %></h3>
+                    <p><%= post.userId.email %></p>
+                    </div>
+                    <a href="/post-detail/<%= post._id %>">See More....</a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

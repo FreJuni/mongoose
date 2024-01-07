@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="add-post-con">
+        <h2>Login Account</h2>
+        <div class="coon">
+            <a href="/">Go back</a>
+        </div>
+        <div>
+            <form action="/login" method="post">
+                <div class="form-con">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required >
+                </div>
+                <div class="form-con">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required >
+                </div>
+                <button class="post-btn">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
